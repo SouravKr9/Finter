@@ -84,8 +84,6 @@ h1{
 .red-focus:focus { border: 1px solid #FF5049 !important; }
 
 .top {
-    right: 50%;
-    width: 104vw;
     height: 40vh;
     background-image: linear-gradient(to right, #2ecc71, #27ae60);
     background-size: cover;
@@ -170,6 +168,8 @@ h1{
     padding: 14px;
     border-bottom: 1px solid #e7e7e7;
     background-color: #f7f7f7;
+    /* right: 50%;
+    width: 105vw; */
 }
 
 .add__container {
