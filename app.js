@@ -48,7 +48,9 @@ var budgetController = (function (){
 
         test : function(){
             console.log(data);
-        }
+        },
+
+        data
     }
 
 })();
@@ -109,6 +111,8 @@ var uiController = (function (){
             fieldsArray[0].focus();
         },
 
+        
+
         getDOMstrings : function (){
             return DOMstrings;
         }
@@ -118,10 +122,13 @@ var uiController = (function (){
 var appController = (function(budgetController, uiController) {
     var setUpEventListeners = function () {
         var DOMstrings = uiController.getDOMstrings();
-        document.querySelector(DOMstrings.inputBtn).addEventListener("click", addItemController);
+        //console.log(DOMstrings.inputBtn);
+       // document.querySelector(DOMstrings.inputBtn).addEventListener("click", addItemController);
         document.addEventListener("keypress", function(event) {
-            if(event.keyCode === 13 || event.which === 13)
+            if(event.keyCode === 13 || event.which === 13){
                 addItemController();
+                graphCalc();
+            }
         });
 
     }
@@ -140,9 +147,19 @@ var appController = (function(budgetController, uiController) {
         }
     };
 
+    var graphCalc = function() {
+        var expData = budgetController.data.allItems.exp;
+        var graphData = [];
+        expData.forEach(element => {
+            graphData.push(element.value);
+        });
+        //console.log(graphData);
+    }
+
     return {
         init : function() {
             console.log("Application initalized");
+            
             setUpEventListeners();
         }
     }
