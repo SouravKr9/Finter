@@ -1,2 +1,2 @@
 # Finter
-Web application with vanilla JS
+Web application with node.js
