@@ -14,4 +14,4 @@ app.listen(port, () => {
 app.use(express.json());
 app.use(userRouter);
 app.use(expenseRouter);
-app.use(incomeRouter);
+//app.use(incomeRouter);
