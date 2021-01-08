@@ -3,7 +3,7 @@ const Expense = require('../model/Expense');
 const auth = require('../middleware/auth');
 const router = new express.Router();
 
-router.post('/expense', auth, async(req, res) => {
+router.post('/expenses', auth, async(req, res) => {
     const expense = new Expense({
         ...req.body,
         owner: req.user._id
