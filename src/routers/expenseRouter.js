@@ -13,7 +13,7 @@ router.post('/expenses', auth, async(req, res) => {
         await expense.save();
         res.status(201).send('Expense added');
     } catch(err){
-        res.status(400).send(err);
+        res.status(400).send('Whoops!!! something went wrong');
     }
 })
 
@@ -26,7 +26,7 @@ router.get('/expenses', auth, async(req, res) => {
         
         res.send(expenses);
     } catch(err){
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -40,7 +40,7 @@ router.get('/expenses/:id', auth, async(req, res) => {
         
         res.send(expense);
     } catch(err){
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -71,7 +71,7 @@ router.patch('/expenses/:id', auth, async(req, res) => {
         await expense.save();
         res.send(expense);
     } catch(err){
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -86,7 +86,7 @@ router.delete('/expenses/:id', auth, async(req, res) => {
         
         res.send(expense);
     } catch(err){
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 

@@ -13,7 +13,7 @@ router.post('/incomes', auth, async(req, res) => {
         await income.save();
         res.status(200).send('Income added');
     } catch(err){
-        res.status(400).send(err);
+        res.status(400).send('Whoops!!! something went wrong');
     }
 })
 
@@ -28,7 +28,7 @@ router.get('/incomes', auth, async(req, res) => {
 
         res.send(incomes);
     } catch(err){
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -44,7 +44,7 @@ router.get('/incomes/:id', auth, async(req, res) => {
 
         res.send(income);
     } catch(err){
-        res.staus(500).send(err);
+        res.staus(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -76,7 +76,7 @@ router.patch('/incomes/:id', auth, async(req, res) => {
         res.send(income);
         
     } catch(err){
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 
 })
@@ -93,7 +93,7 @@ router.delete('/incomes/:id', auth, async(req, res) => {
 
         res.send(income);
     } catch(err){
-        res.staus(500).send(err);
+        res.staus(500).send('Whoops!!! something went wrong');
     }
 })
 

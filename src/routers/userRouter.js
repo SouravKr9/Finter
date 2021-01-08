@@ -11,7 +11,7 @@ router.post('/users', async (req, res) => {
         const token = await user.generateAuthToken();
         res.status(201).send({user: user, token: token});
     } catch (err) {
-        res.status(400).send(err);
+        res.status(400).send('Whoops!!! something went wrong');
     }
 })
 
@@ -21,7 +21,7 @@ router.post('/users/login', async (req, res) => {
         const token = await user.generateAuthToken();
         res.status(200).send({user: user, token: token});
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).send('Whoops!!! something went wrong');
     }
 })
 
@@ -34,7 +34,7 @@ router.post('/users/logout', auth, async(req, res) => {
         await req.user.save();
         res.send();
     } catch (err) {
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -45,7 +45,7 @@ router.post('/users/logoutAll', auth, async(req, res) => {
         await req.user.save();
         res.send();
     } catch (err) {
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 
@@ -72,7 +72,7 @@ router.patch('/users/me', auth, async (req, res) => {
         await req.user.save();
         res.send(req.user);
    } catch (err) {
-       res.status(500).send(err);
+       res.status(500).send('Whoops!!! something went wrong');
    }
 })
 
@@ -81,7 +81,7 @@ router.delete('/users/me', auth, async (req, res) => {
         await req.user.remove();
         res.send(req.user);
     } catch (err) {
-        res.status(500).send(err);
+        res.status(500).send('Whoops!!! something went wrong');
     }
 })
 

@@ -102,7 +102,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
         
         return user;
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).send('Whoops!!! something went wrong');
     }
     
 }
