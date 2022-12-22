@@ -23,7 +23,7 @@
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.18",
